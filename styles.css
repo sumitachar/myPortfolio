@@ -166,7 +166,17 @@ nav {
     background-position: center center;
     height: 668px;
     width: 529px;
+
+    border-radius: 0rem 0rem 1rem 1rem;
+    /* backdrop-filter: blur(10px);
+    background-color: #eae9e951;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
 }
+
+
+
 .Sliding_text{
     color:#dedada;
     font-size: 20px;
@@ -454,7 +464,7 @@ nav {
 
   
 
-  @keyframes circle-in-bottom-right {
+  /* @keyframes circle-in-bottom-right {
     from{
       clip-path: circle(0%);
       background-color: #edd4ab;
@@ -467,5 +477,45 @@ nav {
   
   .home  {
     animation: 10.5s cubic-bezier(.25, 1, .30, 1) circle-in-bottom-right both;
+  } */
+
+
+  #background-animation-container {
+    background-color: #000000;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1000;
+    backdrop-filter: blur(10px);
   }
+  
+  .ani-bubble {
+    background-color: blue;
+    border-radius: 75px;
+    height: 150px;
+    position: absolute;
+    top: 100%;
+    width: 150px;
+  
+    -webkit-animation: bubblemove 10s linear infinite;
+    -moz-animation: bubblemove 10s linear infinite;
+    animation: bubblemove 10s linear infinite;
+  }
+  
+  @-webkit-keyframes bubblemove {
+    from { top: 100%; }
+    to   { top: -600px; }
+  }
+  @-moz-keyframes bubblemove {
+    from { top: 100%; }
+    to   { top: -600px; }
+  }
+  @keyframes bubblemove {
+    from { top: 100%; }
+    to   { top: -600px; } /* This must be far enough off screen to allow the largest object to wander off with enough delay before restarting at the bottom, to be caught by the interval timer */
+  }
+  
  
